@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link href="{% static 'css/reset.css' %}" rel="stylesheet">
+    <style type="text/css">
+        .header {
+            height: 60px;
+            background-color: #A9A9A9;
+            left: 0;
+            top: 0;
+        }
+
+        .header, .footer {
+            width: 100%;
+            position: fixed;
+        }
+
+        .header h3 {
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .content {
+            height: 1000px;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .footer {
+            height: 60px;
+            background-color: white;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    {% block header%}
+        <h3>请填充标题</h3>
+    {% endblock %}
+
+</div>
+
+<div class="content">
+
+    {% block content %}
+        请填充内容
+    {% endblock %}
+
+
+</div>
+<div class="footer">
+
+    <a href="{% url 'app:home' %}">
+        <img src="{% static 'img/home.png' %}">
+        <span>首页</span>
+    </a>
+    <a href="{% url 'app:market' %}">
+        <img src="{% static 'img/market.png' %}">
+        <span>闪购</span>
+    </a>
+    <a href="{% url 'app:cart' %}">
+        <img src="{% static 'img/cart.png' %}">
+        <span>购物车</span>
+    </a>
+    <a href="{% url 'app:mine' %}">
+        <img src="{% static 'img/mine.png' %}">
+        <span>我的</span>
+    </a>
+
+</div>
+
+</body>
+</html>
